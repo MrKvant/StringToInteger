@@ -25,7 +25,7 @@ public class Main {
         try {
             return Integer.valueOf(result);
         } catch (NumberFormatException e) {
-            System.out.println("Error: RegExp work incorrect.");
+            e.printStackTrace();
             return 0;
         }
     }
