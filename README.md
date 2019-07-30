@@ -19,4 +19,4 @@ store integers within the 32-bit signed integer range<br>
 # Startup Instructions:
 1. Clone the repository
 2. Go to the folder `/out`
-3. Run the command `java -cp . com.kazachenko.strtoint.Main "-233dfd34"`
+3. Run the command `java -cp . com.kazachenko.strtoint.Main "-4815 ABC 162342"`
