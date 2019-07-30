@@ -6,7 +6,13 @@ import java.util.regex.Pattern;
 public class Main {
 
     public static void main(String[] args) {
-        String text = "  -4815 ABC 162342";
+        String text = null;
+        try {
+            text = args[0];
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Error: Missing parameter");
+            return;
+        }
         Integer num = stringToInteger(text);
         System.out.println(num);
     }
@@ -15,12 +21,12 @@ public class Main {
         String regex = "[-+]?\\d+";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(text);
-        String result;
-        if (matcher.find()) {
-            result = matcher.group();
-        } else {
-            result = "0";
+        String result = matcher.find() ? matcher.group() : "0";
+        try {
+            return Integer.valueOf(result);
+        } catch (NumberFormatException e) {
+            System.out.println("Error: RegExp work incorrect.");
+            return 0;
         }
-        return Integer.valueOf(result);
     }
 }
