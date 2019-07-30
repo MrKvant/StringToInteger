@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class Main {
 
     public static void main(String[] args) {
-        String text = null;
+        String text;
         try {
             text = args[0];
         } catch (ArrayIndexOutOfBoundsException e) {
@@ -18,7 +18,7 @@ public class Main {
     }
 
     private static Integer stringToInteger(String text) {
-        String regex = "[-+]?\\d+";
+        String regex = "^\\s*[-+]?\\d+";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(text);
         String result = matcher.find() ? matcher.group() : "0";
