@@ -16,3 +16,7 @@ Note:<br>
 (b) Assume we are dealing with an environment which could only<br>
 store integers within the 32-bit signed integer range<br>
 
+# Startup Instructions:
+1. Clone the repository
+2. Go to the folder "`/out`"
+3. java -cp . com.kazachenko.strtoint.Main "-233dfd34"
